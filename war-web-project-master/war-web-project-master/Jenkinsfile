@@ -13,12 +13,12 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
         }
         stage('build') {
             steps {
-              bat 'mvn clean install -f war-web-project-master/pom.xml'
+              sh 'mvn clean install -f war-web-project-master/pom.xml'
             }
         }
         stage('codeQuality') {
             steps {
-               bat 'mvn sonar:sonar -f war-web-project-master/pom.xml'             
+               sh 'mvn sonar:sonar -f war-web-project-master/pom.xml'             
             }
         }
         stage('deploy') {

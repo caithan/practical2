@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Gitcheckout') {
             steps {
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'mygit_cred', url: 'https://github.com/caithan/pipelineproject.git']]])            }
+checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mygit_cred', url: 'https://github.com/caithan/practical2.git']]])      }
         }
         stage('build') {
             steps {
